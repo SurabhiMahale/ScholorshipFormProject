@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Page 3</title>
+
+    <h1 id="title">Continued</h1>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+        .blurfield {
+			background: rgba(189, 192, 194, 0.251);
+			font-family: 'Prata', serif;
+			font-size: 0.8em;
+			border-radius: 10px;
+
+		}
+		.blurfield:hover{
+			background: rgba(243, 245, 247, 0.857);
+			box-shadow: 5px 5px 2px 2px rgba(66, 51, 66, 0.471);
+		}
+        .leg {
+            color: rgb(0, 0, 0);
+            font-size: 0.55cm;
+            font-family: cursive;
+            font-style: inherit;
+        }
+
+        #title {
+            font-family: 'Prata', serif;
+            text-align: center;
+        }
+
+        body {
+            background-image: url("../img/grad2.jpg");
+            background-repeat: no-repeat;
+            background-size: 1500px 1700px;
+        }
+
+        a {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .button {
+			display: inline-block;
+			width: 10%;
+			color: rgb(0, 0, 0);
+			background-color: rgb(187, 197, 236);
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 0.4cm;
+			text-align: center;
+			margin-left: 40%;
+			border-radius: 10px;
+		}
+
+		.button:hover {
+			background-color: #454765;
+			box-shadow: 5px 5px 2px 2px rgba(104, 81, 104, 0.471);
+		}
+
+		.button:active {
+			background-color: rgb(152, 130, 191);
+		}
+
+        .heading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.7cm;
+            color: dimgrey;
+
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            var fatyes = document.getElementById("fatyes");
+            var fatno = document.getElementById("fatno");
+
+            var motyes = document.getElementById("momyes");
+            var motno = document.getElementById("momno");
+
+            fatyes.onclick = enable1;
+            fatno.onclick = disable1;
+
+            motyes.onclick = enable2;
+            motno.onclick = disable2;
+            document.getElementById("btn1").addEventListener("click",validate);
+        }
+
+            function enable1() {
+
+                document.getElementById("father_name").disabled = false;
+                document.getElementById("father_occ").disabled = false;
+                document.getElementById("fatsalyes").disabled = false;
+                document.getElementById("fatsalno").disabled = false;
+                        }
+            function disable1() {
+
+                document.getElementById("father_name").disabled = true;
+                document.getElementById("father_occ").disabled = true;
+                document.getElementById("fatsalyes").disabled = true;
+                document.getElementById("fatsalno").disabled = true;
+            }
+
+            function enable2() {
+
+                document.getElementById("mother_name").disabled = false;
+                document.getElementById("mother_occ").disabled = false;
+                document.getElementById("motsalyes").disabled = false;
+                document.getElementById("motsalno").disabled = false;
+            }
+            function disable2() {
+
+                document.getElementById("mother_name").disabled = true;
+                document.getElementById("mother_occ").disabled = true;
+                document.getElementById("motsalyes").disabled = true;
+                document.getElementById("motsalno").disabled = true;
+            }
+
+
+            function validate() {
+                var filter = /^[a-zA-Z\s]+$/;
+                if (!filter.test(document.getElementById("father_name").value) && document.getElementById("father_name").disabled==false)
+                    alert("Invalid father's name");
+                else if (!filter.test(document.getElementById("mother_name").value) && document.getElementById("mother_name").disabled==false)
+                    alert("Invalid mother's name");
+                else if (document.getElementById("father_occ").value == "") 
+                {
+                    alert("Invalid father's name");
+                }
+               /* else if (document.getElementById("").value == "") { }
+                else if (document.getElementById("").value == "") { }
+                else if (document.getElementById("").value == "") { }*/
+                else
+                window.location.href = "html page1.html";
+            }   
+            function reload()
+		{
+			document.location.reload();
+		}  
+        function required(inputtx)     
+        {
+            if(inputtx.value.length==0){
+            alert("Fill all fields");
+            return false;}
+            return true;
+        }  
+       
+    </script>
+</head>
+
+<body>
+    <form name="page2">
+        <div class="blurfield">
+            <fieldset>
+                <legend class="leg">Other Information
+                </legend><br>
+
+                <div class="heading">Father</div><br>
+                Is father alive?
+                <input type="radio" name="choices" required id="fatyes">Yes
+                <input type="radio" name="choices" required id="fatno">No<br><br>
+                Father's name:<input type="text" id="father_name" required disabled><br><br>
+                Father's occupation:<input type="text" id="father_occ" disabled required><br><br>
+                Is salaried?
+                <input type="radio" id="fatsalyes" name="choices1"disabled required>Yes
+                <input type="radio" id="fatsalno" name="choices1" disabled>No<br><br>
+
+                <div class="heading"> Mother</div> <br>
+                Is Mother alive?
+                <input type="radio" name="choices2" id="momyes" required>Yes
+                <input type="radio" name="choices2" id="momno">No<br><br>
+                Mother's name:<input type="text" id="mother_name" disabled required><br><br>
+                Mother's occupation:<input type="text" id="mother_occ" disabled required><br><br>
+                Is salaried?
+                <input type="radio" id="motsalyes" name="choices3" disabled required>Yes
+                <input type="radio" id="motsalno" name="choices3" disabled>No<br><br>
+            </fieldset>
+        </div>
+        <button type="submit" id="btn1" class="button">Next</button>
+        <input type="reset" value="Reset" class="button" style="margin-left: 0%;" onClick="reload()"/>
+    </form>
+    
+    <!-- <input type="submit" value="Save and logout" class="button" onClick="validate()"/> -->
+    
+</body>
+</html>

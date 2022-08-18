@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page 4</title>
+    <h1 id="title">Continued</h1>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+        .blurfield {
+			background: rgba(189, 192, 194, 0.251);
+			font-family: 'Prata', serif;
+			font-size: 0.8em;
+			border-radius: 10px;
+
+		}
+		.blurfield:hover{
+			background: rgba(243, 245, 247, 0.857);
+			box-shadow: 5px 5px 2px 2px rgba(66, 51, 66, 0.471);
+		}
+
+        .leg {
+            color: rgb(0, 0, 0);
+            font-size: 0.55cm;
+            font-family: cursive;
+            font-style: inherit;
+        }
+
+        #title {
+            font-family: 'Prata', serif;
+            text-align: center;
+        }
+
+        body {
+            background-image: url("../img/grad3.jpg");
+            background-repeat: no-repeat;
+            background-size: 3000px 3000px;
+        }
+
+        a {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        .button {
+			display: inline-block;
+			width: 10%;
+			color: rgb(0, 0, 0);
+			background-color: rgb(187, 197, 236);
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 0.4cm;
+			text-align: center;
+			margin-left: 40%;
+			border-radius: 10px;
+		}
+
+		.button:hover {
+			background-color: #454765;
+			box-shadow: 5px 5px 2px 2px rgba(104, 81, 104, 0.471);
+		}
+
+		.button:active {
+			background-color: rgb(152, 130, 191);
+		}
+    </style>
+    <script>
+        function validate()
+        {
+            window.location.href = "html page5.html";
+			return;
+        }
+        function reload()
+		{
+			document.location.reload();
+		}
+    </script>
+
+</head>
+
+<body>
+    <form target="_blank" method="POST">
+        <div class="blurfield">
+            <fieldset>
+                <legend class="leg">Past qualification</legend><br>
+                Qualification Level:<input type="radio" name="choices" required>SSC10th
+                <input type="radio" name="choices">CBSE10th
+                <input type="radio" name="choices">SSC12th
+                <input type="radio" name="choices">CBSE12th<br><br>
+                Stream:
+                <input type="radio" name="choices" required>Science
+                <input type="radio" name="choices">Commerce
+                <input type="radio" name="choices">Arts
+                <input type="radio" name="choices">Diploma
+                <input type="radio" name="choices">Other<br><br>
+                If other provide informaton:<input type="text" name="other" value="" required><br><br>
+                Institute State:<input type="text" name="state" value=""><br><br>
+                    Institute District:<input type="text" name="district" value=""><br><br>
+                    Institute Name:<input type="text" name="name" value=""><br><br>
+                    Admission year:<input type="text" name="Admisssion year" value=""><br><br>
+                    passing year:<input type="text" name="passing year" value=""><br><br>
+                    Result:<input type="radio" name="choices">Pass<input type="radio" name="choices">Fail<br><br>
+                    percentage:<input type="text" name="Percenatge" value=""><br><br>
+                    Uplaod marksheet:<input type="file" name="Marksheet"><br>
+            </fieldset>
+        </div>
+    </form>
+    <input type="button" value="Next" class="button" onClick="validate()" />
+    <input type="reset" value="Reset" class="button" style="margin-left: 0%;" onClick="reload()" />
+</body>
+
+</html>
